@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOLLOWERS</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.671);
+        }
+
+        h1 {
+            text-align: center;
+            color: aqua;
+        }
+        #sunodKa {
+            position: absolute;
+            width: 100px; 
+            pointer-events: none; 
+            z-index: 1000; 
+        }
+        .button-container {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1100;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sunod-Sunod chibissss</h1>
+
+    <img src="raid.png" alt="" id="sunodKa">
+
+    <div class="button-container">
+        <button onclick="changeImage('rai.png')">Raiden</button>
+        <button onclick="changeImage('say.png')">Sayu</button>
+        <button onclick="changeImage('paim.png')">Paimon</button>
+        <button onclick="changeImage('keqi.png')">keqing</button>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            var image = document.getElementById('sunodKa');
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+
+            var imageWidth = image.offsetWidth / 2;
+            var imageHeight = image.offsetHeight / 2;
+            
+            image.style.left = (mouseX - imageWidth) + 'px';
+            image.style.top = (mouseY - imageHeight) + 'px';
+        });
+
+        function changeImage(src) {
+            var image = document.getElementById('sunodKa');
+            image.src = src;
+        }
+    </script>
+</body>
+</html>
